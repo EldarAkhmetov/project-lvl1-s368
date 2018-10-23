@@ -1,7 +1,7 @@
 {
   "name": "s368brain-games",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.4",
+  "description": "A logic game",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/EldarAkhmetov/project-lvl1-s368.git"
   },
-  "author": "",
+  "author": "Eldar Akhmetov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EldarAkhmetov/project-lvl1-s368/issues"
@@ -29,5 +29,9 @@
     "@babel/core": "^7.1.2",
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.0"
-  }
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
+  "keywords":"game"
 }
