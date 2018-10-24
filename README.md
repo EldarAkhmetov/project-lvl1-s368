@@ -4,3 +4,4 @@
 [![Build Status](https://travis-ci.org/EldarAkhmetov/project-lvl1-s368.svg?branch=master)](https://travis-ci.org/EldarAkhmetov/project-lvl1-s368)
 
 [![asciicast](https://asciinema.org/a/hAtj16Niap0CCDBOErV5RVpI3.png)](https://asciinema.org/a/hAtj16Niap0CCDBOErV5RVpI3)
+[![asciicast](https://asciinema.org/a/nt3O3TYe8lCt5EH66G4CctKpf.png)](https://asciinema.org/a/nt3O3TYe8lCt5EH66G4CctKpf)
