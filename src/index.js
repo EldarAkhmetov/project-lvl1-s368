@@ -19,20 +19,13 @@ export const checkEven = (num) => {
 };
 
 export const test = (userName) => {
-  if (checkEven(15) === false) {
-    console.log(`Let's try again, ${userName}!`);
-    return false;
-  }
-  if (checkEven(6) === false) {
-    console.log(`Let's try again, ${userName}!`);
-    return false;
-  }
-  if (checkEven(7) === false) {
-    console.log(`Let's try again, ${userName}!`);
-    return false;
+  for (let i = 0; i <= 2; i += 1) {
+    if (checkEven(Math.floor(Math.random() * (100 - 0))) === false) {
+      console.log(`Let's try again, ${userName}!`);
+      return false;
+    }
   }
   console.log(`Congratulations, ${userName}!!!`);
   return true;
 };
-
 export default hello;
