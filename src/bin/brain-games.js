@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import hello from '..';
+import { hello as hi } from '..';
 
 console.log('Welcome to the Brain Games!');
-hello(0);
+hi();
