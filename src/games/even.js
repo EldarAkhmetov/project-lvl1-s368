@@ -1,21 +1,16 @@
-import { hello, test } from '..';
-import readlineSync from 'readline-sync';
+import {
+  hello, test, greetings, description, answerCorrectAnswer, question,
+} from '..';
 
 export default () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".');
+  greetings();
+  description('Answer "yes" if number even otherwise answer "no".');
   const userName = hello();
-  const isEven = number => number % 2 === 0;
   const checkEven = (num) => {
-    console.log(`Question: ${num}`);
-    const answer = readlineSync.question('Answer: ');
+    const isEven = number => number % 2 === 0;
     const correctAnswer = isEven(num) ? 'yes' : 'no';
-    if (answer === correctAnswer) {
-      console.log('Correct');
-      return true;
-    }
-    console.log(`'${answer}' is wrong answer $(. Correct answer was '${correctAnswer}'`);
-    return false;
+    question(`Question: ${num}`);
+    return answerCorrectAnswer(correctAnswer);
   };
   test(userName, checkEven);
 };
