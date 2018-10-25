@@ -9,8 +9,7 @@ export const hello = () => {
 export const test = (userName, gameFunction) => {
   const numberOfSamples = 3;
   for (let i = 1; i <= numberOfSamples; i += 1) {
-    if (gameFunction(Math.floor(Math.random() * (100 - 0)), Math.floor(Math.random() * (100 - 0)))
-    === false) {
+    if (!gameFunction(Math.floor(Math.random() * 100), Math.floor(Math.random() * 100))) {
       console.log(`Let's try again, ${userName}!`);
       return;
     }
