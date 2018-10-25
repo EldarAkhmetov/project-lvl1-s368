@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-import { hello, test, checkExpression } from '..';
+import theExpressions from '../games/calc';
 
-console.log('Welcome to the Brain Games!');
-console.log('What is the result of the expression?');
-const userName = hello();
-test(userName, checkExpression);
+theExpressions();
