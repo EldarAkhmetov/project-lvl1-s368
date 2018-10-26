@@ -1,21 +1,30 @@
 import engine from '..';
 
 const description = 'What is the result of the expression?';
-const brainCalc = (a, b) => {
-  const num = Math.floor(Math.random() * 3);
-  const X = () => {
-    if (num === 0) return '+';
-    if (num === 1) return '-';
-    return '*';
-  };
-  const correctAnswer = (x, y) => {
-    if (num === 0) return x + y;
-    if (num === 1) return x - y;
-    return x * y;
-  };
-  const finalCorrectAnswer = correctAnswer(a, b).toString();
-  console.log(`Question: ${a} ${X()} ${b}`);
-  return finalCorrectAnswer;
+
+const signs = '+-*';
+const chooseSign = () => {
+  const chooseExpression = Math.floor(Math.random() * 3);
+  return signs[chooseExpression];
+};
+let answer;
+const calculator = (x, y, sign) => {
+  switch (sign) {
+    case '+': answer = x + y;
+      break;
+    case '-': answer = x - y;
+      break;
+    default: answer = x * y;
+  }
+  return answer;
+};
+const brainCalc = () => {
+  const a = Math.floor(Math.random() * 100);
+  const b = Math.floor(Math.random() * 100);
+  const X = chooseSign();
+  const correctAnswer = calculator(a, b, X).toString();
+  const question = `Question: ${a} ${X} ${b}`;
+  return { question, correctAnswer };
 };
 
 export default () => {
