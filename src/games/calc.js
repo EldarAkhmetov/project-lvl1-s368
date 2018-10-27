@@ -1,14 +1,13 @@
 import engine from '..';
+import { getRandomNumber } from '../utils';
 
 const description = 'What is the result of the expression?';
 
 const signs = '+-*';
-const chooseSign = () => {
-  const chooseExpression = Math.floor(Math.random() * 3);
-  return signs[chooseExpression];
-};
-let answer;
+const chooseSign = () => signs[getRandomNumber(0, signs.length)];
+
 const calculator = (x, y, sign) => {
+  let answer;
   switch (sign) {
     case '+': answer = x + y;
       break;
@@ -19,11 +18,11 @@ const calculator = (x, y, sign) => {
   return answer;
 };
 const brainCalc = () => {
-  const a = Math.floor(Math.random() * 100);
-  const b = Math.floor(Math.random() * 100);
-  const X = chooseSign();
-  const correctAnswer = calculator(a, b, X).toString();
-  const question = `Question: ${a} ${X} ${b}`;
+  const a = getRandomNumber(0, 100);
+  const b = getRandomNumber(0, 100);
+  const finalSign = chooseSign();
+  const correctAnswer = calculator(a, b, finalSign).toString();
+  const question = `${a} ${finalSign} ${b}`;
   return { question, correctAnswer };
 };
 

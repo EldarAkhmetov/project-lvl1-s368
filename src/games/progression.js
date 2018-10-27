@@ -1,26 +1,30 @@
 import engine from '..';
+import { getRandomNumber } from '../utils';
 
 const description = 'What number is missing in this progression?';
 
-const progressionLength = 10;
+const length = 10;
 
-const findMissingNumber = () => {
-  const a = Math.floor(Math.random() * 100);
-  const b = Math.floor(Math.random() * 100);
-  const positionOfNumber = Math.floor(Math.random() * (progressionLength));
+const findProgressionOutput = (firstElement, step, positionOfNumber) => {
   let progressionOutput = '';
-  let progression = a;
-  for (let i = 0; i <= progressionLength - 1; i += 1) {
+  let iElement;
+  for (let i = 0; i <= length - 1; i += 1) {
+    iElement = firstElement + (i * step);
     if (i === positionOfNumber) {
       progressionOutput += '.. ';
+    } else {
+      progressionOutput += `${iElement.toString()} `;
     }
-    if (i !== positionOfNumber) {
-      progressionOutput += `${progression.toString()} `;
-    }
-    progression += b;
   }
-  const correctAnswer = (a + b * (positionOfNumber)).toString();
-  const question = (progressionOutput);
+  return progressionOutput;
+};
+
+const findMissingNumber = () => {
+  const firstElement = getRandomNumber(0, 100);
+  const step = getRandomNumber(0, 100);
+  const positionOfNumber = getRandomNumber(0, length);
+  const correctAnswer = (firstElement + (step * positionOfNumber)).toString();
+  const question = (findProgressionOutput(firstElement, step, positionOfNumber));
   return { question, correctAnswer };
 };
 export default () => {
